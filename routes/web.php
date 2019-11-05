@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.index');
 });
+Route::resource('events-categories', 'Admin\EoDetailCategoryController');
+
+Route::resource('events', 'Events\EventsController');
+
+Route::resource('tenants', 'Tenants\TenantController');
+
+Route::resource('products', 'Tenants\ProductsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
